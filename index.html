@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>喵BTI - 猫咪性格测试</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 首页/引导页 -->
+    <div id="landing-page" class="page active">
+        <div class="container">
+            <div class="cover-image-container">
+                <img src="images/cover.jpg" alt="封面图" class="cover-image">
+                <div class="cover-title-overlay">
+                    <h1 class="main-title">你的猫到底在想什么？</h1>
+                    <h2 class="subtitle">喵星人MBTI性格测试</h2>
+                </div>
+            </div>
+            <p class="description">揭秘主子灵魂深处的真实人格</p>
+            <div class="input-group">
+                <input type="text" id="cat-name" placeholder="输入猫咪的名字..." maxlength="10">
+            </div>
+            <button id="start-btn" class="btn-primary">开始测试 🐾</button>
+        </div>
+    </div>
+
+    <!-- 答题页 -->
+    <div id="quiz-page" class="page">
+        <div class="container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+                <div class="fish-count" id="fish-count">0/12</div>
+            </div>
+            <div class="question-container">
+                <div class="question-number" id="question-number">第 1 题</div>
+                <h2 class="question-title" id="question-title"></h2>
+                <div class="question-scene" id="question-scene"></div>
+                <div class="options-container" id="options-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 加载页 -->
+    <div id="loading-page" class="page">
+        <div class="container">
+            <div class="loading-animation">
+                <div class="cat-typing">
+                    <div class="cat-head">🐱</div>
+                    <div class="keyboard">⌨️</div>
+                </div>
+                <div class="loading-text" id="loading-text">正在连接喵星服务器...</div>
+                <div class="loading-dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 结果页 -->
+    <div id="result-page" class="page">
+        <div class="container">
+            <div class="result-poster" id="result-poster">
+                <div class="result-header">
+                    <h1 class="cat-name-result" id="cat-name-result"></h1>
+                    <p class="cat-name-subtitle">的性格是</p>
+                </div>
+                <div class="mbti-badge" id="mbti-badge"></div>
+                <div class="cat-title" id="cat-title"></div>
+                <div class="cat-illustration" id="cat-illustration"></div>
+                <div class="tags-container" id="tags-container"></div>
+                <div class="radar-chart-container">
+                    <canvas id="radar-chart"></canvas>
+                </div>
+                <div class="description-text" id="description-text"></div>
+                <div class="social-section">
+                    <div class="best-match">
+                        <span class="label">最佳拍档：</span>
+                        <span id="best-match"></span>
+                    </div>
+                    <div class="enemy">
+                        <span class="label">天敌：</span>
+                        <span id="enemy"></span>
+                    </div>
+                </div>
+                <div class="lucky-info">
+                    <div class="lucky-item">
+                        <span class="label">今日幸运物：</span>
+                        <span id="lucky-item"></span>
+                    </div>
+                    <div class="lucky-color">
+                        <span class="label">幸运色：</span>
+                        <span id="lucky-color"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="action-buttons">
+                <button id="save-poster-btn" class="btn-secondary">保存海报</button>
+                <button id="test-another-btn" class="btn-primary">测试另一只猫</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
